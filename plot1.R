@@ -1,6 +1,7 @@
 ##Set personal working directory
 ##setwd("~/R/CourseraR4")
 
+##read data into R
 df = read.table("household_power_consumption.txt", header = T, sep=";", 
                 comment.char="%", stringsAsFactors=FALSE, na.strings="?")
 
