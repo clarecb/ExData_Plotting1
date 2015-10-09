@@ -14,6 +14,9 @@ df$Date = as.Date(df$Date, "%d/%m/%Y")
 ##subset data for two days Feb 1 and 2 2007. 
 subsetdf = subset(df, df$Date=="2007-02-01"|df$Date=="2007-02-02") 
 
+##Creating PNG file
+png(file="plot4.png", width=480, height=480)
+
 ##Set 2x2 plot
 par(mfrow=c(2,2))
 
@@ -34,7 +37,4 @@ legend("topright", col=c("black","red","blue"), c("Sub_metering_1","Sub_metering
 ##Draws global reative power plot
 with(subsetdf, plot(Time, Global_reactive_power, type = "l", xlab = "datetime", ylab = "Global_reative_power"))
 
-
-##Creating PNG file
-dev.copy(png, file="plot4.png", width=480, height=480)
 dev.off()
